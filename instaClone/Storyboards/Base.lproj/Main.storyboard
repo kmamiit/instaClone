@@ -55,27 +55,74 @@
                     <connections>
                         <outlet property="passwordField" destination="biY-75-2dw" id="gnQ-JR-FBF"/>
                         <outlet property="usernameField" destination="zRA-LF-DzN" id="Ag4-7U-WYa"/>
-                        <segue destination="fxY-mb-Wev" kind="presentation" identifier="loginSegue" id="zsA-Kd-gkN"/>
+                        <segue destination="TzE-Hv-IFl" kind="presentation" identifier="loginSegue" id="zsA-Kd-gkN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Feed-->
         <scene sceneID="tjf-tb-8iY">
             <objects>
-                <viewController id="fxY-mb-Wev" sceneMemberID="viewController">
+                <viewController id="fxY-mb-Wev" customClass="HomeFeedViewController" customModule="instaClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="avy-Fh-xg7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ArB-rA-bMY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="315"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="3Xg-eo-a9Z"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Home Feed" id="PDH-qz-vlK">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="WKs-Lq-nWa">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FqB-gz-VkV">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="onSignOut:" destination="fxY-mb-Wev" eventType="touchUpInside" id="qtN-b9-r7j"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="qX5-Xx-0ij">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rft-j0-WS3">
+                                <rect key="frame" x="280" y="9.5" width="79" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="insta_camera_btn"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3o-s0-yGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="134"/>
+            <point key="canvasLocation" x="1796" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xew-9V-8Jg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TzE-Hv-IFl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ADP-xS-rcE">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fxY-mb-Wev" kind="relationship" relationship="rootViewController" id="Qfv-sK-4Yh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MaT-NB-pbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="133.13343328335833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
+    </resources>
 </document>
