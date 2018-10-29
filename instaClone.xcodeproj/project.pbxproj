@@ -116,13 +116,12 @@
 		4461B3A92185746E00091053 /* instaClone */ = {
 			isa = PBXGroup;
 			children = (
+				44B95CC3218699BF0016301C /* Storyboards */,
+				44B95CC2218699820016301C /* View Controllers */,
 				4461B3AA2185746E00091053 /* AppDelegate.swift */,
 				4461B3AC2185746E00091053 /* ViewController.swift */,
-				4461B3AE2185746E00091053 /* Main.storyboard */,
 				4461B3B12185746E00091053 /* Assets.xcassets */,
-				4461B3B32185746E00091053 /* LaunchScreen.storyboard */,
 				4461B3B62185746E00091053 /* Info.plist */,
-				4479D377218587DB00D8B9CB /* LoginViewController.swift */,
 			);
 			path = instaClone;
 			sourceTree = "<group>";
@@ -143,6 +142,23 @@
 				4461B3CC2185746E00091053 /* Info.plist */,
 			);
 			path = instaCloneUITests;
+			sourceTree = "<group>";
+		};
+		44B95CC2218699820016301C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4479D377218587DB00D8B9CB /* LoginViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		44B95CC3218699BF0016301C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4461B3AE2185746E00091053 /* Main.storyboard */,
+				4461B3B32185746E00091053 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		508D5DDC69EDF5C1F97FC7C3 /* Pods */ = {

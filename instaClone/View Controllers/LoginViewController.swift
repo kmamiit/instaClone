@@ -34,16 +34,7 @@ class LoginViewController: UIViewController {
                 print("you're logged in!")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
-                
-      
         }
-      /*  PFUser.logIn(withUsername: username, password: password) { (user: PFUser?, error: Error?) in
-            if let error = error {
-                print("User log in failed: \(error.localizedDescription)")
-            } else {
-                print("User logged in successfully")
-            }
-        }*/
     }
    
     @IBAction func onSignUp(_ sender: Any) {
@@ -64,33 +55,9 @@ class LoginViewController: UIViewController {
                     print("Username is taken");
                 }
             }
-            }
-        /*
-        newUser.signUpInBackground { (success: Bool, error: Error?) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("User Registered Successfully")
-            }
-        }
-        */
-    }
-    /*
-    @IBAction func onSignUp(_ sender: Any) {
-        let newUser = PFUser()
-        
-        newUser.username = usernameField.text
-        newUser.password = passwordField.text
-        
-        newUser.signUpInBackground { (success: Bool, error: NSError?) -> Void in
-            if success {
-                print("yay, created a user!")
-            } else {
-                print(error?.localizedDescription);
-            }
         }
     }
-    */
+
     
     /*
     // MARK: - Navigation
