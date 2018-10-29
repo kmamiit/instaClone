@@ -38,6 +38,20 @@ class HomeFeedViewController: UIViewController {
         }
         */
     }
+    
+    
+    @IBAction func onCompose(_ sender: Any) {
+        self.performSegue(withIdentifier: "composeSegue", sender: nil)
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //let button = sender as! UIButton
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

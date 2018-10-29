@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44444C6F2186C7DC00250CFD /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44444C6E2186C7DC00250CFD /* ComposeViewController.swift */; };
 		4461B3AB2185746E00091053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461B3AA2185746E00091053 /* AppDelegate.swift */; };
 		4461B3AD2185746E00091053 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461B3AC2185746E00091053 /* ViewController.swift */; };
 		4461B3B02185746E00091053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4461B3AE2185746E00091053 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		11022C83D931F1BE6F6809AD /* Pods-instaCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaCloneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instaCloneTests/Pods-instaCloneTests.release.xcconfig"; sourceTree = "<group>"; };
 		42C1A6DB19972A2D08511C94 /* Pods_instaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44444C6E2186C7DC00250CFD /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		4461B3A72185746E00091053 /* instaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4461B3AA2185746E00091053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4461B3AC2185746E00091053 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				44B95CC42186A27F0016301C /* HomeFeedViewController.swift */,
 				4479D377218587DB00D8B9CB /* LoginViewController.swift */,
+				44444C6E2186C7DC00250CFD /* ComposeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44444C6F2186C7DC00250CFD /* ComposeViewController.swift in Sources */,
 				4479D378218587DB00D8B9CB /* LoginViewController.swift in Sources */,
 				4461B3AD2185746E00091053 /* ViewController.swift in Sources */,
 				4461B3AB2185746E00091053 /* AppDelegate.swift in Sources */,

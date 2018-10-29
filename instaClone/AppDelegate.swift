@@ -32,11 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         }
         
+        NotificationCenter.default.addObserver(forName: Notification.Name("didCancel"), object: nil, queue: OperationQueue.main) { (Notification) in
+            print("Cancel notification received")
+            self.cancel()
+        }
         
         // Check if user is logged in
         if PFUser.current() != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "HomeFeedViewController")
+            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
         }
         
         return true
@@ -54,8 +58,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
                 self.window?.rootViewController = loginViewController
             }
-        }
-        )
+        })
+    }
+    
+    func cancel() {
+        print("Successfully cancelled post")
+        // Cancel the Insta Post
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeFeedViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
+        self.window?.rootViewController = homeFeedViewController
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
