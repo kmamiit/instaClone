@@ -27,16 +27,23 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onSignIn(_ sender: Any) {
-        let username = usernameField.text ?? ""
-        let password = passwordField.text ?? ""
-        
-        PFUser.logIn(withUsername: username, password: password) { (user: PFUser?, error: Error?) in
+       // let username = usernameField.text ?? ""
+        //let password = passwordField.text ?? ""
+        PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) -> Void in
+            if user != nil {
+                print("you're logged in!")
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }
+                
+      
+        }
+      /*  PFUser.logIn(withUsername: username, password: password) { (user: PFUser?, error: Error?) in
             if let error = error {
                 print("User log in failed: \(error.localizedDescription)")
             } else {
                 print("User logged in successfully")
             }
-        }
+        }*/
     }
    
     @IBAction func onSignUp(_ sender: Any) {
@@ -50,6 +57,7 @@ class LoginViewController: UIViewController {
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if success {
                 print("Yay, created a user! User Registered Successfully")
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else if let error = error {
                 print(error.localizedDescription);
                 if error._code == 202 {
