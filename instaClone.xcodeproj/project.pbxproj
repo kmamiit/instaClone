@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4421C5CB218AB57D00741D2F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4421C5CA218AB57D00741D2F /* Post.swift */; };
+		4421C5CD218AD5F600741D2F /* postCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4421C5CC218AD5F600741D2F /* postCell.swift */; };
 		44444C6F2186C7DC00250CFD /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44444C6E2186C7DC00250CFD /* ComposeViewController.swift */; };
 		4461B3AB2185746E00091053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461B3AA2185746E00091053 /* AppDelegate.swift */; };
-		4461B3AD2185746E00091053 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461B3AC2185746E00091053 /* ViewController.swift */; };
 		4461B3B02185746E00091053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4461B3AE2185746E00091053 /* Main.storyboard */; };
 		4461B3B22185746E00091053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4461B3B12185746E00091053 /* Assets.xcassets */; };
 		4461B3B52185746E00091053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4461B3B32185746E00091053 /* LaunchScreen.storyboard */; };
@@ -42,10 +43,11 @@
 /* Begin PBXFileReference section */
 		11022C83D931F1BE6F6809AD /* Pods-instaCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaCloneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instaCloneTests/Pods-instaCloneTests.release.xcconfig"; sourceTree = "<group>"; };
 		42C1A6DB19972A2D08511C94 /* Pods_instaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4421C5CA218AB57D00741D2F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4421C5CC218AD5F600741D2F /* postCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCell.swift; sourceTree = "<group>"; };
 		44444C6E2186C7DC00250CFD /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		4461B3A72185746E00091053 /* instaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4461B3AA2185746E00091053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4461B3AC2185746E00091053 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4461B3AF2185746E00091053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4461B3B12185746E00091053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4461B3B42185746E00091053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4421C5C9218AB51F00741D2F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4421C5CA218AB57D00741D2F /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4461B39E2185746E00091053 = {
 			isa = PBXGroup;
 			children = (
@@ -120,10 +130,11 @@
 		4461B3A92185746E00091053 /* instaClone */ = {
 			isa = PBXGroup;
 			children = (
+				4421C5CC218AD5F600741D2F /* postCell.swift */,
+				4421C5C9218AB51F00741D2F /* Models */,
 				44B95CC3218699BF0016301C /* Storyboards */,
 				44B95CC2218699820016301C /* View Controllers */,
 				4461B3AA2185746E00091053 /* AppDelegate.swift */,
-				4461B3AC2185746E00091053 /* ViewController.swift */,
 				4461B3B12185746E00091053 /* Assets.xcassets */,
 				4461B3B62185746E00091053 /* Info.plist */,
 			);
@@ -406,8 +417,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				44444C6F2186C7DC00250CFD /* ComposeViewController.swift in Sources */,
+				4421C5CD218AD5F600741D2F /* postCell.swift in Sources */,
 				4479D378218587DB00D8B9CB /* LoginViewController.swift in Sources */,
-				4461B3AD2185746E00091053 /* ViewController.swift in Sources */,
+				4421C5CB218AB57D00741D2F /* Post.swift in Sources */,
 				4461B3AB2185746E00091053 /* AppDelegate.swift in Sources */,
 				44B95CC52186A27F0016301C /* HomeFeedViewController.swift in Sources */,
 			);

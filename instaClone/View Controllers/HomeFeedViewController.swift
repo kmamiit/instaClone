@@ -7,14 +7,70 @@
 //
 
 import UIKit
+import Parse
 
-class HomeFeedViewController: UIViewController {
+class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    var posts: [Post] = []
+    var refreshControl: UIRefreshControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        refreshControl = UIRefreshControl()
+        // refreshControl.addTarget(self, action: #selector(HomeFeedViewController.didPullToRefresh(_:)), for: .valueChanged)
+        // tableView.insertSubview(refreshControl, at: 0)
+        
+        tableView.dataSource = self
+        
+        
+        
+//        let query = Post.query();
+//
+//        //query?.whereKey("likesCount", greaterThan: 0)
+//        query?.includeKey("createdAt")
+//        query?.limit = 20
+//
+//        query?.findObjectsInBackground(block: { (Post, error: Error?) -> Void in
+//            if let posts = Post {
+//                self.posts = posts as! [Post] //////////
+//                self.tableView.reloadData() ///////////
+//            } else {
+//                print("Couldn't fetch in background");
+//                print(error?.localizedDescription);
+//            }
+//        })
+        fetchPosts()
     }
+
+    func didPullToRefresh(_ refreshControl: UIRefreshControl){
+        fetchPosts()
+    }
+    
+    func fetchPosts(){
+        // let url = URL
+        
+        // construct PFQuery
+        let query = Post.query();
+        query?.order(byDescending: "createdAt")
+        query?.includeKey("Author")
+        query?.limit = 20
+        
+        // fetch data asynchronously
+        query?.findObjectsInBackground(block: { (Post, error: Error?) -> Void in
+            if let posts = Post {
+                self.posts = posts as! [Post] //////////
+                self.tableView.reloadData() ///////////
+            } else {
+                print("Couldn't fetch in background");
+                print(error?.localizedDescription);
+            }
+        })
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,15 +98,38 @@ class HomeFeedViewController: UIViewController {
     
     @IBAction func onCompose(_ sender: Any) {
         self.performSegue(withIdentifier: "composeSegue", sender: nil)
+    }
+    
+ 
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! postCell
         
+        let post = posts[indexPath.row]
+        
+        if let imageFile: PFFile = post.media {
+            imageFile.getDataInBackground(block: { (data, error) in
+                if error == nil {
+                    DispatchQueue.main.async {
+                        let image = UIImage(data: data!)
+                        cell.postImageView.image = image;
+                    }
+                } else {
+                    print(error?.localizedDescription);
+                }
+            })
+        }
+        
+        return cell;
+//        if let photo = post.media {
+//            photo.getDataInBackGround
+//        }
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let button = sender as! UIButton
-    }
-    
-    
     
     /*
     // MARK: - Navigation
