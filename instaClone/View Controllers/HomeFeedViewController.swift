@@ -17,11 +17,11 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.rowHeight = 300
         // Do any additional setup after loading the view.
         refreshControl = UIRefreshControl()
-        // refreshControl.addTarget(self, action: #selector(HomeFeedViewController.didPullToRefresh(_:)), for: .valueChanged)
-        // tableView.insertSubview(refreshControl, at: 0)
+        refreshControl.addTarget(self, action: #selector(HomeFeedViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
         
         tableView.dataSource = self
         
@@ -45,7 +45,7 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
         fetchPosts()
     }
 
-    func didPullToRefresh(_ refreshControl: UIRefreshControl){
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
         fetchPosts()
     }
     
@@ -63,6 +63,7 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
             if let posts = Post {
                 self.posts = posts as! [Post] //////////
                 self.tableView.reloadData() ///////////
+                self.refreshControl.endRefreshing()
             } else {
                 print("Couldn't fetch in background");
                 print(error?.localizedDescription);
@@ -111,7 +112,8 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! postCell
         
         let post = posts[indexPath.row]
-        
+        print(post)
+        cell.captionLabel.text = post.caption
         if let imageFile: PFFile = post.media {
             imageFile.getDataInBackground(block: { (data, error) in
                 if error == nil {
