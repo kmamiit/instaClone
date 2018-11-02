@@ -340,6 +340,7 @@
         <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="LGM-dN-xmi"/>
         <segue reference="MD5-OR-hkl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -133,6 +133,20 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
 //        }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell) {
+            let post = posts[indexPath.row]
+            let detailViewController = segue.destination as! detailViewController
+            detailViewController.post = post
+        }
+        
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
